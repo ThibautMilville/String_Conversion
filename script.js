@@ -46,8 +46,8 @@ class conversion {
   showCopyButton(event) {
     if (event.target.id !== 'clear' && event.target.id !== '') {
       this.copyButton.style.display = 'block';
-      // Manage the copy button position if there is the scrollbar
-      if (this.outputTextarea.scrollHeight > this.outputTextarea.clientHeight) {
+      // Manage the copy button position if there is the scrollbar and the appareil is not a mobile
+      if (this.outputTextarea.scrollHeight > this.outputTextarea.clientHeight && window.innerWidth > 768) {
         this.copyButton.style.right = '1.5rem';
       } else {
         this.copyButton.style.right = '0.5rem';

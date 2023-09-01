@@ -104,4 +104,39 @@ body section.converter div.buttons button {
 }
 body section.converter div.buttons button:not(:last-child) {
   margin-right: 1rem;
+}
+
+@media (max-width: 768px) {
+  body {
+    background-color: var(--white);
+  }
+  body section.converter {
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+  }
+  body section.converter h1 {
+    font-size: 1.2rem;
+  }
+  body section.converter div.textareas {
+    flex-direction: column;
+  }
+  body section.converter div.textareas div.textarea {
+    width: 100%;
+    height: 10rem;
+    margin-bottom: 1rem;
+  }
+  body section.converter div.textareas div.textarea:first-child {
+    margin-right: 0;
+  }
+  body section.converter div.buttons {
+    flex-direction: column;
+  }
+  body section.converter div.buttons button {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  body section.converter div.buttons button:not(:last-child) {
+    margin-right: 0;
+  }
 }/*# sourceMappingURL=style.css.map */

@@ -120,4 +120,46 @@ body {
   }
 }
 
-// 
+// Responsive - Mobile
+@media (max-width: 768px) {
+  body {
+    background-color: var(--white);
+
+    section.converter {
+      width: 100%;
+      height: 100%;
+      padding: 1rem;
+
+      h1 {
+        font-size: 1.2rem;
+      }
+
+      div.textareas {
+        flex-direction: column;
+
+        div.textarea {
+          width: 100%;
+          height: 10rem;
+          margin-bottom: 1rem;
+
+          &:first-child {
+            margin-right: 0;
+          }
+        }
+      }
+
+      div.buttons {
+        flex-direction: column;
+
+        button {
+          width: 100%;
+          margin-bottom: 1rem;
+
+          &:not(:last-child) {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+}
