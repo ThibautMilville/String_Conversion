@@ -5,10 +5,12 @@ class conversion {
     this.inputTextarea = document.getElementById('input');
     this.outputTextarea = document.getElementById('output');
     // Buttons
+    this.actionsButtons = document.querySelectorAll('div.buttons button');
     this.convertToUpperCasesButton = document.getElementById('convert-to-uppercases');
     this.convertToLowerCasesButton = document.getElementById('convert-to-lowercases');
     this.convertToCapitalizeButton = document.getElementById('convert-to-capitalize');
     this.clearTextareasButton = document.getElementById('clear');
+    this.copyButton = document.getElementById('copy');
   }
 
   // Initialisation
@@ -40,24 +42,52 @@ class conversion {
     this.outputTextarea.value = '';
   }
 
+  // Copy to clipboard
+  copyToClipboard() {
+    this.outputTextarea.select();
+    try {
+      navigator.clipboard.writeText(this.outputTextarea.value);
+      this.copyButton.innerHTML = 'Copied!';
+      setTimeout(() => {
+        this.copyButton.innerHTML = 'Copy';
+      }, 3000);
+    }
+    catch (err) {
+      console.log('Unable to copy');
+    }
+  }
+
 
   // Bind events
   bindEvents() {
-    // Convert to uppercases
-    this.convertToUpperCasesButton.addEventListener('click', () => {
-      this.convertToUpperCases();
+    // Click on an action button
+    this.actionsButtons.forEach((button) => {
+      button.addEventListener('click', (event) => {
+        switch (event.target.id) {
+          case 'convert-to-uppercases':
+            this.convertToUpperCases();
+            break;
+          case 'convert-to-lowercases':
+            this.convertToLowerCases();
+            break;
+          case 'convert-to-capitalize':
+            this.convertToCapitalize();
+            break;
+          case 'clear':
+            this.clearTextareas();
+            break;
+        }
+        // If the event in one of the action buttons except "clear", show the copy button
+        if (event.target.id !== 'clear' && event.target.id !== '') {
+          this.copyButton.style.display = 'block';
+        } else {
+          this.copyButton.style.display = 'none';
+        }
+      });
     });
-    // Convert to lowercases
-    this.convertToLowerCasesButton.addEventListener('click', () => {
-      this.convertToLowerCases();
-    });
-    // Convert to capitalize
-    this.convertToCapitalizeButton.addEventListener('click', () => {
-      this.convertToCapitalize();
-    });
-    // Clear textareas
-    this.clearTextareasButton.addEventListener('click', () => {
-      this.clearTextareas();
+    // Copy to clipboard
+    this.copyButton.addEventListener('click', () => {
+      this.copyToClipboard();
     });
   }
 }

@@ -70,11 +70,12 @@ body {
         }
 
         button#copy {
+          display: none;
           position: absolute;
           bottom: 0.5rem;
           right: 0.5rem;
-          font: 400 0.9rem 'Lato', sans-serif;
-          padding: 0.5rem 1rem;
+          font: 400 0.7rem 'Lato', sans-serif;
+          padding: 0.3rem 0.6rem;
           border: 1px solid var(--light-green);
           border-radius: 0.5rem;
           text-transform: uppercase;
