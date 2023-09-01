@@ -65,7 +65,7 @@ class conversion {
       this.copyButton.innerHTML = 'Copied!';
       setTimeout(() => {
         this.copyButton.innerHTML = 'Copy';
-      }, 3000);
+      }, 2000);
     }
     catch (err) {
       console.log('Unable to copy');
