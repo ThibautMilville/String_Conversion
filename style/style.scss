@@ -1,8 +1,8 @@
 @font-face {
   font-family: 'Lato';
-  src: url('fonts/Lato-Light.ttf') format('truetype'),
-       url('fonts/Lato-Regular.ttf') format('truetype'),
-       url('fonts/Lato-Bold.ttf') format('truetype');
+  src: url('fonts/Lato/Lato-Light.ttf') format('truetype'),
+       url('fonts/Lato/Lato-Regular.ttf') format('truetype'),
+       url('fonts/Lato/Lato-Bold.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -23,4 +23,11 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+
+  div.buttons {
+
+    button {
+      font-family: 'Lato', sans-serif;
+    }
+  }
 }
