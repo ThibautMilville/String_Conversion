@@ -10,8 +10,13 @@
   <section class="converter">
     <h1>String conversion</h1>
     <div class="textareas">
-      <textarea name="input" id="input" cols="40" rows="10" placeholder="Enter your text to be converted here..."></textarea>
-      <textarea name="output" id="output" cols="40" rows="10"></textarea>
+      <div class="textarea">
+        <textarea name="input" id="input" cols="40" rows="10" placeholder="Enter your text to be converted here..."></textarea>
+      </div>
+      <div class="textarea">
+        <textarea name="output" id="output" cols="40" rows="10"></textarea>
+        <button id="copy">Copy</button>
+      </div>
     </div>
     <div class="buttons">
       <button id="convert-to-uppercases">Uppercases</button>
@@ -20,5 +25,6 @@
       <button id="clear">Clear</button>
     </div>
   </section>
+  <script src="script.js"></script>
 </body>
 </html>

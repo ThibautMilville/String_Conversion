@@ -45,19 +45,46 @@ body section.converter div.textareas {
   display: flex;
   margin-bottom: 1.2rem;
 }
-body section.converter div.textareas textarea {
+body section.converter div.textareas div.textarea {
+  width: 100%;
+  height: 10rem;
+  border: 1px solid var(--gray);
+  border-radius: 0.5rem;
+  position: relative;
+}
+body section.converter div.textareas div.textarea textarea {
   font: 400 0.9rem "Lato", sans-serif;
   width: 100%;
   height: 100%;
   padding: 1rem;
-  border: 1px solid var(--gray);
+  border: none;
   border-radius: 0.5rem;
   resize: none;
 }
-body section.converter div.textareas textarea:first-child {
+body section.converter div.textareas div.textarea textarea:focus {
+  outline: none;
+  border: none;
+}
+body section.converter div.textareas div.textarea button#copy {
+  position: absolute;
+  bottom: 0.5rem;
+  right: 0.5rem;
+  font: 400 0.9rem "Lato", sans-serif;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--light-green);
+  border-radius: 0.5rem;
+  text-transform: uppercase;
+  color: var(--white);
+  background-color: var(--light-green);
+  cursor: pointer;
+}
+body section.converter div.textareas div.textarea:first-child {
   margin-right: 1rem;
 }
-body section.converter div.textareas textarea:hover {
+body section.converter div.textareas div.textarea:hover {
+  border: 1px solid var(--black);
+}
+body section.converter div.textareas div.textarea:focus-within {
   border: 1px solid var(--black);
 }
 body section.converter div.buttons {
