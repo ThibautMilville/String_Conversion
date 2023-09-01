@@ -42,6 +42,21 @@ class conversion {
     this.outputTextarea.value = '';
   }
 
+  // Show copy button
+  showCopyButton(event) {
+    if (event.target.id !== 'clear' && event.target.id !== '') {
+      this.copyButton.style.display = 'block';
+      // Manage the copy button position if there is the scrollbar
+      if (this.outputTextarea.scrollHeight > this.outputTextarea.clientHeight) {
+        this.copyButton.style.right = '1.5rem';
+      } else {
+        this.copyButton.style.right = '0.5rem';
+      }
+    } else {
+      this.copyButton.style.display = 'none';
+    }
+  }
+
   // Copy to clipboard
   copyToClipboard() {
     this.outputTextarea.select();
@@ -77,12 +92,8 @@ class conversion {
             this.clearTextareas();
             break;
         }
-        // If the event in one of the action buttons except "clear", show the copy button
-        if (event.target.id !== 'clear' && event.target.id !== '') {
-          this.copyButton.style.display = 'block';
-        } else {
-          this.copyButton.style.display = 'none';
-        }
+        // If the event is one of the action buttons except "clear", show the copy button
+        this.showCopyButton(event);
       });
     });
     // Copy to clipboard
