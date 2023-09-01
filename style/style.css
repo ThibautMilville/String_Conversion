@@ -7,6 +7,8 @@
 :root {
   --white: #fff;
   --black: #000;
+  --gray: #ccc;
+  --light-green: #66da66;
 }
 
 * {
@@ -21,7 +23,57 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: var(--light-green);
 }
-body div.buttons button {
-  font-family: "Lato", sans-serif;
+body section.converter {
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  background-color: var(--white);
+  border-radius: 0.5rem;
+}
+body section.converter h1 {
+  font: 700 1.5rem "Lato", sans-serif;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+body section.converter div.textareas {
+  display: flex;
+  margin-bottom: 1.2rem;
+}
+body section.converter div.textareas textarea {
+  font: 400 0.9rem "Lato", sans-serif;
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  border: 1px solid var(--gray);
+  border-radius: 0.5rem;
+  resize: none;
+}
+body section.converter div.textareas textarea:first-child {
+  margin-right: 1rem;
+}
+body section.converter div.textareas textarea:hover {
+  border: 1px solid var(--black);
+}
+body section.converter div.buttons {
+  display: flex;
+  justify-content: center;
+}
+body section.converter div.buttons button {
+  font: 400 1rem "Lato", sans-serif;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--light-green);
+  border-radius: 0.5rem;
+  text-transform: uppercase;
+  color: var(--white);
+  background-color: var(--light-green);
+  cursor: pointer;
+}
+body section.converter div.buttons button:not(:last-child) {
+  margin-right: 1rem;
 }/*# sourceMappingURL=style.css.map */
